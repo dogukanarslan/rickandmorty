@@ -1,5 +1,5 @@
 import { filters } from '../constants';
-console.log(filters);
+
 const Sidebar = () => {
   return (
     <div className="sidebar">

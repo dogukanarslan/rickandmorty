@@ -1,4 +1,5 @@
 import Sidebar from './Sidebar';
+import Main from './Main';
 
 const Home = () => {
   return (
@@ -7,7 +8,9 @@ const Home = () => {
         <div className="col-2">
           <Sidebar />
         </div>
-        <div className="col-10">Main</div>
+        <div className="col-10">
+          <Main />
+        </div>
       </div>
     </div>
   );
