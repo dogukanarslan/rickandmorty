@@ -1,33 +1,40 @@
+import { useState } from 'react';
 import { filters } from '../constants';
 
 const Sidebar = ({ getCharacters }) => {
+  const handleClick = (e, filter) => {
+    getCharacters(filter);
+  };
+
   return (
     <div className="sidebar">
-      <ul className="list-group">
+      <div className="list-group mb-2">
         {filters.statuses.map((status) => {
           return (
-            <li
+            <a
               key={status.value}
-              onClick={() => getCharacters(`status=${status.value}`)}
-              className="list-group-item"
+              data-toggle="list"
+              onClick={(e) => handleClick(e, `status=${status.value}`)}
+              className="list-group-item list-group-item-action"
             >
               {status.name}
-            </li>
+            </a>
           );
         })}
 
         {filters.genders.map((gender) => {
           return (
-            <li
+            <a
               key={gender.value}
-              onClick={() => getCharacters(`gender=${gender.value}`)}
-              className="list-group-item"
+              data-toggle="list"
+              onClick={(e) => handleClick(e, `gender=${gender.value}`)}
+              className="list-group-item list-group-item-action"
             >
               {gender.name}
-            </li>
+            </a>
           );
         })}
-      </ul>
+      </div>
     </div>
   );
 };

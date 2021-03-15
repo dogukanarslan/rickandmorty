@@ -10,10 +10,7 @@ const Home = () => {
     getCharacters();
   }, []);
 
-  const getCharacters = (filter) => {
-    if (!filter) {
-      filter = '';
-    }
+  const getCharacters = (filter = '') => {
 
     fetch(`${api}/character/?${filter}`)
       .then((res) => res.json())
