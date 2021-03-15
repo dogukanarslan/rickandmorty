@@ -1,17 +1,4 @@
-import { useState, useEffect } from 'react';
-import { api } from '../constants';
-
-const Characters = () => {
-  const [characters, setCharacters] = useState([]);
-
-  useEffect(() => {
-    fetch(`${api}/character`)
-      .then((res) => res.json())
-      .then((res) => {
-        setCharacters(res.results);
-      });
-  }, []);
-  
+const Characters = ({ characters }) => {
   return (
     <table className="table table-hover">
       <thead>
