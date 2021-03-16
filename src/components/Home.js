@@ -11,7 +11,6 @@ const Home = () => {
   }, []);
 
   const getCharacters = (filter = '') => {
-
     fetch(`${api}/character/?${filter}`)
       .then((res) => res.json())
       .then((res) => {
