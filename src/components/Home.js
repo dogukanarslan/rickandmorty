@@ -15,7 +15,7 @@ const Home = () => {
     fetch(`${api}/character/?${filter}`)
       .then((res) => res.json())
       .then((res) => {
-        setCharacters(res.results);
+        setCharacters(res);
       });
   };
 
@@ -27,7 +27,7 @@ const Home = () => {
         </div>
         <div className="col-md-10">
           <Filter getCharacters={getCharacters} />
-          <Main characters={characters} />
+          <Main characters={characters} setCharacters={setCharacters} />
         </div>
       </div>
     </div>
