@@ -22,10 +22,10 @@ const Home = () => {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-2">
+        <div className="col-md-2">
           <Sidebar />
         </div>
-        <div className="col-10">
+        <div className="col-md-10">
           <Filter getCharacters={getCharacters} />
           <Main characters={characters} />
         </div>

@@ -25,7 +25,7 @@ const Filter = ({ getCharacters }) => {
     <div className="sidebar">
       <form>
         <div className="row mb-4">
-          <div className="col">
+          <div className="col-md-6">
             <label>Status</label>
             <select
               className="form-control"
@@ -40,7 +40,7 @@ const Filter = ({ getCharacters }) => {
               })}
             </select>
           </div>
-          <div className="col">
+          <div className="col-md-6">
             <label>Gender</label>
             <select
               className="form-control"
