@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import Sidebar from './Sidebar';
 import Main from './Main';
+import Filter from './Filter';
+import Sidebar from './Sidebar';
 import { api } from '../constants';
 
 const Home = () => {
@@ -22,9 +23,10 @@ const Home = () => {
     <div className="container-fluid">
       <div className="row">
         <div className="col-2">
-          <Sidebar getCharacters={getCharacters} />
+          <Sidebar />
         </div>
         <div className="col-10">
+          <Filter getCharacters={getCharacters} />
           <Main characters={characters} />
         </div>
       </div>
