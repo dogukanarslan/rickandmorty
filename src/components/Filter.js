@@ -24,36 +24,37 @@ const Filter = ({ getCharacters }) => {
   return (
     <div className="sidebar">
       <form>
-        <div className="form-group">
-          <label>Status</label>
-          <select
-            className="form-control"
-            onChange={(e) => handleChange(e, 'status')}
-          >
-            {filters.statuses.map((status) => {
-              return (
-                <option key={status.value} value={status.value}>
-                  {status.name}
-                </option>
-              );
-            })}
-          </select>
-        </div>
-
-        <div className="form-group">
-          <label>Gender</label>
-          <select
-            className="form-control"
-            onChange={(e) => handleChange(e, 'gender')}
-          >
-            {filters.genders.map((gender) => {
-              return (
-                <option key={gender.value} value={gender.value}>
-                  {gender.name}
-                </option>
-              );
-            })}
-          </select>
+        <div className="row mb-4">
+          <div className="col">
+            <label>Status</label>
+            <select
+              className="form-control"
+              onChange={(e) => handleChange(e, 'status')}
+            >
+              {filters.statuses.map((status) => {
+                return (
+                  <option key={status.value} value={status.value}>
+                    {status.name}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
+          <div className="col">
+            <label>Gender</label>
+            <select
+              className="form-control"
+              onChange={(e) => handleChange(e, 'gender')}
+            >
+              {filters.genders.map((gender) => {
+                return (
+                  <option key={gender.value} value={gender.value}>
+                    {gender.name}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
         </div>
       </form>
     </div>
