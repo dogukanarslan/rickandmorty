@@ -8,10 +8,6 @@ import { api } from '../constants';
 const Home = () => {
   const [characters, setCharacters] = useState([]);
 
-  useEffect(() => {
-    getCharacters();
-  }, []);
-
   const getCharacters = (filter = '') => {
     fetch(`${api}/character/?${filter}`)
       .then((res) => res.json())
