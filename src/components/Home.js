@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Switch, Route } from 'react-router-dom';
 import Main from './Main';
 import Filter from './Filter';
 import Sidebar from './Sidebar';
@@ -26,8 +27,12 @@ const Home = () => {
           <Sidebar />
         </div>
         <div className="col-md-10">
-          <Filter getCharacters={getCharacters} />
-          <Main characters={characters} setCharacters={setCharacters} />
+          <Switch>
+            <Route path="/">
+              <Filter getCharacters={getCharacters} />
+              <Main characters={characters} setCharacters={setCharacters} />
+            </Route>
+          </Switch>
         </div>
       </div>
     </div>

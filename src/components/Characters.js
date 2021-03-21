@@ -1,5 +1,3 @@
-import { api } from '../constants';
-
 const Characters = ({ characters, setCharacters }) => {
   const handleClick = (type) => {
     fetch(characters.info[type])
@@ -39,15 +37,11 @@ const Characters = ({ characters, setCharacters }) => {
       <nav>
         <ul className="pagination d-flex justify-content-between">
           <li className="page-item" onClick={() => handleClick('prev')}>
-            <a className="page-link" href="#">
-              Previous
-            </a>
+            <button className="page-link">Previous</button>
           </li>
           <span>{characters.info && characters.info.page}</span>
           <li className="page-item" onClick={() => handleClick('next')}>
-            <a className="page-link" href="#">
-              Next
-            </a>
+            <button className="page-link">Next</button>
           </li>
         </ul>
       </nav>

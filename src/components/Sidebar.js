@@ -1,15 +1,17 @@
+import {Link} from "react-router-dom";
+
 const Sidebar = () => {
   return (
     <div className="list-group">
-      <a href="" className="list-group-item list-group-item-action">
+      <Link to="/characters" className="list-group-item list-group-item-action">
         Characters
-      </a>
-      <a href="" className="list-group-item list-group-item-action">
+      </Link>
+      <Link to="/locations" className="list-group-item list-group-item-action">
         Locations
-      </a>
-      <a href="" className="list-group-item list-group-item-action">
+      </Link>
+      <Link to="/episodes" className="list-group-item list-group-item-action">
         Episodes
-      </a>
+      </Link>
     </div>
   );
 };
