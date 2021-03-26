@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Main from './Main';
 import Filter from './Filter';
 import Sidebar from './Sidebar';
@@ -24,9 +24,12 @@ const Home = () => {
         </div>
         <div className="col-md-10">
           <Switch>
-            <Route path="/">
+            <Route path="/characters">
               <Filter getCharacters={getCharacters} />
               <Main characters={characters} setCharacters={setCharacters} />
+            </Route>
+            <Route exact path="/">
+              <Redirect to="/characters"></Redirect>
             </Route>
           </Switch>
         </div>
