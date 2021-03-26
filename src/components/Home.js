@@ -1,21 +1,8 @@
-import { useState, useEffect } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import Main from './Main';
-import Filter from './Filter';
+import Character from '../pages/character/Character';
 import Sidebar from './Sidebar';
-import { api } from '../constants';
 
 const Home = () => {
-  const [characters, setCharacters] = useState([]);
-
-  const getCharacters = (filter = '') => {
-    fetch(`${api}/character/?${filter}`)
-      .then((res) => res.json())
-      .then((res) => {
-        setCharacters(res);
-      });
-  };
-
   return (
     <div className="container-fluid">
       <div className="row">
@@ -25,9 +12,16 @@ const Home = () => {
         <div className="col-md-10">
           <Switch>
             <Route path="/characters">
-              <Filter getCharacters={getCharacters} />
-              <Main characters={characters} setCharacters={setCharacters} />
+              <Character />
             </Route>
+            {/*             <Route path="/locations">
+              <Filter getCharacters={getCharacters} />
+              <Main locations={locations} setCharacters={setCharacters} />
+            </Route>
+            <Route path="/episodes">
+              <Filter getCharacters={getCharacters} />
+              <Main episodes={episodes} setCharacters={setCharacters} />
+            </Route> */}
             <Route exact path="/">
               <Redirect to="/characters"></Redirect>
             </Route>

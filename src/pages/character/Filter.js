@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { filters } from '../constants';
+import { filters } from '../../constants';
 
 const Filter = ({ getCharacters }) => {
   const [queryParams, setQueryParams] = useState({});
