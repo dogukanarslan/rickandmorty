@@ -1,5 +1,6 @@
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Character from '../pages/character/Character';
+import Location from '../pages/location/Location';
 import Sidebar from './Sidebar';
 
 const Home = () => {
@@ -14,14 +15,9 @@ const Home = () => {
             <Route path="/characters">
               <Character />
             </Route>
-            {/*             <Route path="/locations">
-              <Filter getCharacters={getCharacters} />
-              <Main locations={locations} setCharacters={setCharacters} />
+            <Route path="/locations">
+              <Location />
             </Route>
-            <Route path="/episodes">
-              <Filter getCharacters={getCharacters} />
-              <Main episodes={episodes} setCharacters={setCharacters} />
-            </Route> */}
             <Route exact path="/">
               <Redirect to="/characters"></Redirect>
             </Route>

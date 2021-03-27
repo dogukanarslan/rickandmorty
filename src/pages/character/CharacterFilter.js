@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { filters } from '../../constants';
 
-const Filter = ({ getCharacters }) => {
+const CharacterFilter = ({ getCharacters }) => {
   const [queryParams, setQueryParams] = useState({});
 
   const handleChange = (e, type) => {
@@ -61,4 +61,4 @@ const Filter = ({ getCharacters }) => {
   );
 };
 
-export default Filter;
+export default CharacterFilter;

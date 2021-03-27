@@ -1,9 +1,9 @@
-const CharacterList = ({ characters, setCharacters }) => {
+const LocationList = ({ locations, setLocations }) => {
   const handleClick = (type) => {
-    fetch(characters.info[type])
+    fetch(locations.info[type])
       .then((response) => response.json())
       .then((data) => {
-        setCharacters(data);
+        setLocations(data);
       });
   };
 
@@ -13,22 +13,18 @@ const CharacterList = ({ characters, setCharacters }) => {
         <thead>
           <tr>
             <th>Name</th>
-            <th>Status</th>
-            <th>Species</th>
             <th>Type</th>
-            <th>Gender</th>
+            <th>Dimension</th>
           </tr>
         </thead>
         <tbody>
-          {characters.results &&
-            characters.results.map((character) => {
+          {locations.results &&
+            locations.results.map((location) => {
               return (
-                <tr key={character.id}>
-                  <td>{character.name}</td>
-                  <td>{character.status}</td>
-                  <td>{character.species}</td>
-                  <td>{character.type}</td>
-                  <td>{character.gender}</td>
+                <tr key={location.id}>
+                  <td>{location.name}</td>
+                  <td>{location.type}</td>
+                  <td>{location.dimension}</td>
                 </tr>
               );
             })}
@@ -39,7 +35,7 @@ const CharacterList = ({ characters, setCharacters }) => {
           <li className="page-item" onClick={() => handleClick('prev')}>
             <button className="page-link">Previous</button>
           </li>
-          <span>{characters.info && characters.info.page}</span>
+          <span>{locations.info && locations.info.page}</span>
           <li className="page-item" onClick={() => handleClick('next')}>
             <button className="page-link">Next</button>
           </li>
@@ -49,4 +45,4 @@ const CharacterList = ({ characters, setCharacters }) => {
   );
 };
 
-export default CharacterList;
+export default LocationList;
