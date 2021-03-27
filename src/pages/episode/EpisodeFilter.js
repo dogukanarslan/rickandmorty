@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const LocationFilter = ({ getLocations }) => {
+const EpisodeFilter = ({ getEpisodes }) => {
   const [queryParams, setQueryParams] = useState({});
 
   const handleChange = (e, type) => {
@@ -17,7 +17,7 @@ const LocationFilter = ({ getLocations }) => {
     }
 
     const stringifiedQueryParams = _queryParams.join('&');
-    getLocations(stringifiedQueryParams);
+    getEpisodes(stringifiedQueryParams);
   }, [queryParams]);
 
   return (
@@ -34,12 +34,12 @@ const LocationFilter = ({ getLocations }) => {
             />
           </div>
           <div className="col-md-6">
-            <label>Dimension</label>
+            <label>Episode</label>
             <input
               className="form-control"
               type="text"
-              placeholder="Dimension"
-              onChange={(e) => handleChange(e, 'dimension')}
+              placeholder="Episode"
+              onChange={(e) => handleChange(e, 'episode')}
             />
           </div>
         </div>
@@ -48,4 +48,4 @@ const LocationFilter = ({ getLocations }) => {
   );
 };
 
-export default LocationFilter;
+export default EpisodeFilter;
