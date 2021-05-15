@@ -3,12 +3,15 @@ import './App.css';
 import 'bootstrap';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
+import ThemeContextProvider from './contexts/ThemeContext';
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        <ThemeContextProvider>
+          <Navbar />
+        </ThemeContextProvider>
         <Home />
       </div>
     </Router>

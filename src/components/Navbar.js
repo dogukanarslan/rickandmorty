@@ -1,9 +1,18 @@
+import {useContext} from 'react';
 import { Link } from 'react-router-dom';
+import {ThemeContext} from '../contexts/ThemeContext';
 
 const Navbar = () => {
+  const {isLightTheme, setIsLightTheme, light, dark} = useContext(ThemeContext);
+  const theme = isLightTheme ? light : dark;
+
+  const changeTheme = () => {
+    setIsLightTheme(!isLightTheme);
+  }
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom shadow-md mb-4">
-      <ul className="navbar-nav">
+    <nav className={`navbar navbar-expand-lg border-bottom shadow-md mb-4 ${theme.navbar}`}>
+      <ul className="navbar-nav mr-auto">
         <li className="nav-item">
           <Link to="/" className="nav-link">
             Home
@@ -15,6 +24,7 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
+      <button className={`btn btn-sm ${isLightTheme ? "btn-dark" : "btn-light"}`} onClick={changeTheme}>{isLightTheme ? "Dark" : "Light"}</button>
     </nav>
   );
 };
