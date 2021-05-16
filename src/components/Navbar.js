@@ -11,7 +11,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className={`navbar navbar-expand-lg border-bottom shadow-md mb-4 ${theme.navbar}`}>
+    <nav className={`navbar navbar-expand-lg border-bottom shadow-md ${theme.navbar}`}>
       <ul className="navbar-nav mr-auto">
         <li className="nav-item">
           <Link to="/" className="nav-link">

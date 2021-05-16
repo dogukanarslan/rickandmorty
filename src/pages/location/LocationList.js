@@ -1,4 +1,7 @@
-const LocationList = ({ locations, setLocations }) => {
+import {useContext} from 'react';
+import {ThemeContext} from '../../contexts/ThemeContext';
+
+const LocationList = ({locations, setLocations}) => {
   const handleClick = (type) => {
     fetch(locations.info[type])
       .then((response) => response.json())
@@ -7,27 +10,29 @@ const LocationList = ({ locations, setLocations }) => {
       });
   };
 
+  const {isLightTheme} = useContext(ThemeContext);
+
   return (
     <div>
-      <table className="table table-hover">
+      <table className={`table table-hover ${isLightTheme ? 'text-dark' : 'text-light'}`}>
         <thead>
-          <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Dimension</th>
-          </tr>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Dimension</th>
+        </tr>
         </thead>
         <tbody>
-          {locations.results &&
-            locations.results.map((location) => {
-              return (
-                <tr key={location.id}>
-                  <td>{location.name}</td>
-                  <td>{location.type}</td>
-                  <td>{location.dimension}</td>
-                </tr>
-              );
-            })}
+        {locations.results &&
+        locations.results.map((location) => {
+          return (
+            <tr key={location.id}>
+              <td>{location.name}</td>
+              <td>{location.type}</td>
+              <td>{location.dimension}</td>
+            </tr>
+          );
+        })}
         </tbody>
       </table>
       <nav>

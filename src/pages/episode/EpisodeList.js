@@ -1,3 +1,6 @@
+import {useContext} from 'react';
+import {ThemeContext} from '../../contexts/ThemeContext';
+
 const EpisodeList = ({ episodes, setEpisodes }) => {
   const handleClick = (type) => {
     fetch(episodes.info[type])
@@ -7,9 +10,11 @@ const EpisodeList = ({ episodes, setEpisodes }) => {
       });
   };
 
+  const {isLightTheme} = useContext(ThemeContext);
+
   return (
     <div>
-      <table className="table table-hover">
+      <table className={`table table-hover ${isLightTheme ? 'text-dark' : 'text-light' }`}>
         <thead>
           <tr>
             <th>Name</th>
