@@ -18,11 +18,6 @@ const Navbar = () => {
             Home
           </Link>
         </li>
-        <li className="nav-item">
-          <Link to="/about" className="nav-link">
-            About
-          </Link>
-        </li>
       </ul>
       <button className={`btn btn-sm ${isLightTheme ? "btn-dark" : "btn-light"}`} onClick={changeTheme}>{isLightTheme ? "Dark" : "Light"}</button>
     </nav>
