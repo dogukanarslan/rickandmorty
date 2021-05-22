@@ -5,14 +5,17 @@ import Home from './components/Home';
 import Navbar from './components/Navbar';
 import ThemeContextProvider from './contexts/ThemeContext';
 import CharacterContextProvider from './contexts/CharacterContext';
+import EpisodeContextProvider from './contexts/EpisodeContext';
 
 function App() {
   return (
     <Router>
       <ThemeContextProvider>
         <CharacterContextProvider>
-          <Navbar/>
-          <Home/>
+          <EpisodeContextProvider>
+            <Navbar/>
+            <Home/>
+          </EpisodeContextProvider>
         </CharacterContextProvider>
       </ThemeContextProvider>
     </Router>
