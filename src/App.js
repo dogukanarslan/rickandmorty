@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import ThemeContextProvider from './contexts/ThemeContext';
 import CharacterContextProvider from './contexts/CharacterContext';
 import EpisodeContextProvider from './contexts/EpisodeContext';
+import LocationContextProvider from './contexts/LocationContext';
 
 function App() {
   return (
@@ -13,8 +14,10 @@ function App() {
       <ThemeContextProvider>
         <CharacterContextProvider>
           <EpisodeContextProvider>
-            <Navbar/>
-            <Home/>
+            <LocationContextProvider>
+              <Navbar/>
+              <Home/>
+            </LocationContextProvider>
           </EpisodeContextProvider>
         </CharacterContextProvider>
       </ThemeContextProvider>
