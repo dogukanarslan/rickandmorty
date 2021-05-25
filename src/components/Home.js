@@ -26,7 +26,7 @@ const Home = () => {
               <Episode/>
             </Route>
             <Route exact path="/">
-              <Redirect to="/characters"></Redirect>
+              <Redirect to="/characters"/>
             </Route>
           </Switch>
         </div>
