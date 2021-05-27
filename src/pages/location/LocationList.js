@@ -38,11 +38,11 @@ const LocationList = ({locations, setLocations}) => {
       <nav>
         <ul className="pagination d-flex justify-content-between">
           <li className="page-item" onClick={() => handleClick('prev')}>
-            <button className="page-link">Previous</button>
+            <button className={`btn ${isLightTheme ? 'btn-dark' : 'btn-light'}`}>Previous</button>
           </li>
           <span>{locations.info && locations.info.page}</span>
           <li className="page-item" onClick={() => handleClick('next')}>
-            <button className="page-link">Next</button>
+            <button className={`btn ${isLightTheme ? 'btn-dark' : 'btn-light'}`}>Next</button>
           </li>
         </ul>
       </nav>
