@@ -3,18 +3,10 @@ import {createContext, useState} from 'react';
 export const ThemeContext = createContext({});
 
 const ThemeContextProvider = (props) => {
-  const [isLightTheme, setIsLightTheme] = useState(true);
-
-  const light = {
-    navbar: 'navbar-light bg-light'
-  };
-
-  const dark = {
-    navbar: 'navbar-dark bg-dark'
-  };
+  const [isLightTheme, setIsLightTheme] = useState(false);
 
   return (
-    <ThemeContext.Provider value={{isLightTheme, setIsLightTheme, dark, light}}>
+    <ThemeContext.Provider value={{isLightTheme, setIsLightTheme}}>
       {props.children}
     </ThemeContext.Provider>
   );

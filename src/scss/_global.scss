@@ -1,0 +1,36 @@
+body {
+  background-color: $gray-800;
+}
+
+// Anchor
+a {
+  color: $white;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Button
+.btn {
+  border: 0;
+  padding: 8px 16px;
+  color: $white;
+
+  // Button colors
+  &-orange {
+    background-color: $orange;
+    color: $white;
+  }
+
+  &-gray {
+    background-color: $gray-800;
+    color: $white;
+  }
+
+  // Button sizes
+  &-sm {
+    padding: 4px 12px;
+  }
+}
