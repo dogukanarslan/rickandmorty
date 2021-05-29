@@ -41,7 +41,7 @@ a {
   padding: 8px 16px;
 }
 
-table {
+.table {
   @extend %table-constants;
   width: 100%;
   border-collapse: collapse;

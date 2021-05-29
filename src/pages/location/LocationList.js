@@ -14,7 +14,7 @@ const LocationList = ({locations, setLocations}) => {
 
   return (
     <div>
-      <table className={`table table-hover ${isLightTheme ? 'text-dark' : 'text-light'}`}>
+      <table className="table">
         <thead>
         <tr>
           <th>Name</th>
