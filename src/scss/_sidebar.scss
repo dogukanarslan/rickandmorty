@@ -1,0 +1,30 @@
+@mixin sidebar($background-color, $color) {
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    background: $background-color;
+    text-align: center;
+
+    &-item {
+      padding: 10px 15px;
+      color: $color;
+    }
+
+  }
+}
+
+.sidebar-dark {
+  @include sidebar($gray-900, $white);
+
+  .active {
+    background-color: $orange;
+  }
+}
+
+.sidebar-light {
+  @include sidebar($orange, $white);
+
+  .active {
+    background-color: $gray-400;
+  }
+}
