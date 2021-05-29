@@ -1,7 +1,7 @@
 import {useContext} from 'react';
 import {ThemeContext} from '../../contexts/ThemeContext';
 
-const EpisodeList = ({ episodes, setEpisodes }) => {
+const EpisodeList = ({episodes, setEpisodes}) => {
   const handleClick = (type) => {
     fetch(episodes.info[type])
       .then((response) => response.json())
@@ -14,37 +14,36 @@ const EpisodeList = ({ episodes, setEpisodes }) => {
 
   return (
     <div>
-      <table className={`table table-hover ${isLightTheme ? 'text-dark' : 'text-light' }`}>
+      <table className={`table table-hover ${isLightTheme ? 'text-dark' : 'text-light'}`}>
         <thead>
-          <tr>
-            <th>Name</th>
-            <th>Air Date</th>
-            <th>Episode</th>
-          </tr>
+        <tr>
+          <th>Name</th>
+          <th>Air Date</th>
+          <th>Episode</th>
+        </tr>
         </thead>
         <tbody>
-          {episodes.results &&
-            episodes.results.map((episode) => {
-              return (
-                <tr key={episode.id}>
-                  <td>{episode.name}</td>
-                  <td>{episode.air_date}</td>
-                  <td>{episode.episode}</td>
-                </tr>
-              );
-            })}
+        {episodes.results &&
+        episodes.results.map((episode) => {
+          return (
+            <tr key={episode.id}>
+              <td>{episode.name}</td>
+              <td>{episode.air_date}</td>
+              <td>{episode.episode}</td>
+            </tr>
+          );
+        })}
         </tbody>
       </table>
-      <nav>
-        <ul className="pagination d-flex justify-content-between">
-          <li className="page-item" onClick={() => handleClick('prev')}>
-            <button className={`btn ${isLightTheme ? 'btn-dark' : 'btn-light'}`}>Previous</button>
-          </li>
-          <span>{episodes.info && episodes.info.page}</span>
-          <li className="page-item" onClick={() => handleClick('next')}>
-            <button className={`btn ${isLightTheme ? 'btn-dark' : 'btn-light'}`}>Next</button>
-          </li>
-        </ul>
+      <nav className="d-flex justify-content-between mt-2">
+        <button onClick={() => handleClick('prev')}
+                className={`btn ${isLightTheme ? 'btn-gray' : 'btn-orange'}`}>
+          Previous
+        </button>
+        <span>{episodes.info && episodes.info.page}</span>
+        <button onClick={() => handleClick('next')} className={`btn ${isLightTheme ? 'btn-gray' : 'btn-orange'}`}>
+          Next
+        </button>
       </nav>
     </div>
   );

@@ -34,3 +34,26 @@ a {
     padding: 4px 12px;
   }
 }
+
+// Table
+%table-constants {
+  border: 1px solid $black;
+  padding: 8px 16px;
+}
+
+table {
+  @extend %table-constants;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: $table-background-color;
+  color: $white;
+
+  th {
+    @extend %table-constants;
+    font-weight: bold;
+  }
+
+  td {
+    @extend %table-constants;
+  }
+}

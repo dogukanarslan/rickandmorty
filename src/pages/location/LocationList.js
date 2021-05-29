@@ -35,16 +35,15 @@ const LocationList = ({locations, setLocations}) => {
         })}
         </tbody>
       </table>
-      <nav>
-        <ul className="pagination d-flex justify-content-between">
-          <li className="page-item" onClick={() => handleClick('prev')}>
-            <button className={`btn ${isLightTheme ? 'btn-dark' : 'btn-light'}`}>Previous</button>
-          </li>
-          <span>{locations.info && locations.info.page}</span>
-          <li className="page-item" onClick={() => handleClick('next')}>
-            <button className={`btn ${isLightTheme ? 'btn-dark' : 'btn-light'}`}>Next</button>
-          </li>
-        </ul>
+      <nav className="d-flex justify-content-between mt-2">
+        <button onClick={() => handleClick('prev')}
+                className={`btn ${isLightTheme ? 'btn-gray' : 'btn-orange'}`}>
+          Previous
+        </button>
+        <span>{locations.info && locations.info.page}</span>
+        <button onClick={() => handleClick('next')} className={`btn ${isLightTheme ? 'btn-gray' : 'btn-orange'}`}>
+          Next
+        </button>
       </nav>
     </div>
   );

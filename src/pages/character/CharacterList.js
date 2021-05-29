@@ -39,16 +39,15 @@ const CharacterList = ({characters, setCharacters}) => {
         })}
         </tbody>
       </table>
-      <nav>
-        <ul className="pagination d-flex justify-content-between">
-          <li className="page-item" onClick={() => handleClick('prev')}>
-            <button className={`btn ${isLightTheme ? 'btn-dark' : 'btn-light'}`}>Previous</button>
-          </li>
-          <span>{characters.info && characters.info.page}</span>
-          <li className="page-item" onClick={() => handleClick('next')}>
-            <button className={`btn ${isLightTheme ? 'btn-dark' : 'btn-light'}`}>Next</button>
-          </li>
-        </ul>
+      <nav className="d-flex justify-content-between mt-2">
+        <button onClick={() => handleClick('prev')}
+                className={`btn ${isLightTheme ? 'btn-gray' : 'btn-orange'}`}>
+          Previous
+        </button>
+        <span>{characters.info && characters.info.page}</span>
+        <button onClick={() => handleClick('next')} className={`btn ${isLightTheme ? 'btn-gray' : 'btn-orange'}`}>
+          Next
+        </button>
       </nav>
     </div>
   );
