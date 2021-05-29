@@ -57,3 +57,27 @@ a {
     @extend %table-constants;
   }
 }
+
+// Select
+.select-wrapper {
+  position: relative;
+  width: 350px;
+  margin-top: 10px;
+  // Select Icon
+  &::after {
+    font-size: 24px;
+    color: $black;
+    content: "▾";
+    position: absolute;
+    right: 10px;
+    top: 7px;
+  }
+
+  .select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    padding: 8px;
+    border: none;
+  }
+}

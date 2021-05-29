@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react';
-import { filters } from '../../constants';
+import {useEffect, useState} from 'react';
+import {filters} from '../../constants';
 
-const CharacterFilter = ({ getCharacters }) => {
+const CharacterFilter = ({getCharacters}) => {
   const [queryParams, setQueryParams] = useState({});
 
   const handleChange = (e, type) => {
     e.preventDefault();
     let filter = {};
     filter[type] = e.target.value;
-    setQueryParams({ ...queryParams, ...filter });
+    setQueryParams({...queryParams, ...filter});
   };
 
   useEffect(() => {
@@ -27,33 +27,37 @@ const CharacterFilter = ({ getCharacters }) => {
         <div className="row mb-4">
           <div className="col-md-6">
             <label>Status</label>
-            <select
-              className="form-control"
-              onChange={(e) => handleChange(e, 'status')}
-            >
-              {filters.statuses.map((status) => {
-                return (
-                  <option key={status.value} value={status.value}>
-                    {status.name}
-                  </option>
-                );
-              })}
-            </select>
+            <div className="select-wrapper">
+              <select
+                className="select"
+                onChange={(e) => handleChange(e, 'status')}
+              >
+                {filters.statuses.map((status) => {
+                  return (
+                    <option key={status.value} value={status.value}>
+                      {status.name}
+                    </option>
+                  );
+                })}
+              </select>
+            </div>
           </div>
           <div className="col-md-6">
             <label>Gender</label>
-            <select
-              className="form-control"
-              onChange={(e) => handleChange(e, 'gender')}
-            >
-              {filters.genders.map((gender) => {
-                return (
-                  <option key={gender.value} value={gender.value}>
-                    {gender.name}
-                  </option>
-                );
-              })}
-            </select>
+            <div className="select-wrapper">
+              <select
+                className="select"
+                onChange={(e) => handleChange(e, 'gender')}
+              >
+                {filters.genders.map((gender) => {
+                  return (
+                    <option key={gender.value} value={gender.value}>
+                      {gender.name}
+                    </option>
+                  );
+                })}
+              </select>
+            </div>
           </div>
         </div>
       </form>
