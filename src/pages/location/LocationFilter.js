@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 
-const LocationFilter = ({ getLocations }) => {
+const LocationFilter = ({getLocations}) => {
   const [queryParams, setQueryParams] = useState({});
 
   const handleChange = (e, type) => {
     e.preventDefault();
     let filter = {};
     filter[type] = e.target.value;
-    setQueryParams({ ...queryParams, ...filter });
+    setQueryParams({...queryParams, ...filter});
   };
 
   useEffect(() => {
@@ -26,21 +26,25 @@ const LocationFilter = ({ getLocations }) => {
         <div className="row mb-4">
           <div className="col-md-6">
             <label>Name</label>
-            <input
-              className="form-control"
-              type="text"
-              placeholder="Name"
-              onChange={(e) => handleChange(e, 'name')}
-            />
+            <div className="input-wrapper">
+              <input
+                className="input"
+                type="text"
+                placeholder="Name"
+                onChange={(e) => handleChange(e, 'name')}
+              />
+            </div>
           </div>
           <div className="col-md-6">
             <label>Dimension</label>
-            <input
-              className="form-control"
-              type="text"
-              placeholder="Dimension"
-              onChange={(e) => handleChange(e, 'dimension')}
-            />
+            <div className="input-wrapper">
+              <input
+                className="input"
+                type="text"
+                placeholder="Dimension"
+                onChange={(e) => handleChange(e, 'dimension')}
+              />
+            </div>
           </div>
         </div>
       </form>

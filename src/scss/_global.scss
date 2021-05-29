@@ -58,6 +58,16 @@ a {
   }
 }
 
+// Input
+.input-wrapper {
+  width: 350px;
+  margin-top: 10px;
+  .input {
+    width: 100%;
+    padding: 8px;
+  }
+}
+
 // Select
 .select-wrapper {
   position: relative;

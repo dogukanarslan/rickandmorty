@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 
-const EpisodeFilter = ({ getEpisodes }) => {
+const EpisodeFilter = ({getEpisodes}) => {
   const [queryParams, setQueryParams] = useState({});
 
   const handleChange = (e, type) => {
     e.preventDefault();
     let filter = {};
     filter[type] = e.target.value;
-    setQueryParams({ ...queryParams, ...filter });
+    setQueryParams({...queryParams, ...filter});
   };
 
   useEffect(() => {
@@ -26,21 +26,25 @@ const EpisodeFilter = ({ getEpisodes }) => {
         <div className="row mb-4">
           <div className="col-md-6">
             <label>Name</label>
-            <input
-              className="form-control"
-              type="text"
-              placeholder="Name"
-              onChange={(e) => handleChange(e, 'name')}
-            />
+            <div className="input-wrapper">
+              <input
+                className="input"
+                type="text"
+                placeholder="Name"
+                onChange={(e) => handleChange(e, 'name')}
+              />
+            </div>
           </div>
           <div className="col-md-6">
             <label>Episode</label>
-            <input
-              className="form-control"
-              type="text"
-              placeholder="Episode"
-              onChange={(e) => handleChange(e, 'episode')}
-            />
+            <div className="input-wrapper">
+              <input
+                className="input"
+                type="text"
+                placeholder="Episode"
+                onChange={(e) => handleChange(e, 'episode')}
+              />
+            </div>
           </div>
         </div>
       </form>
