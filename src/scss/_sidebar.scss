@@ -7,14 +7,12 @@
 
     &-item {
       padding: 10px 15px;
-      color: $color;
     }
-
   }
 }
 
 .sidebar-dark {
-  @include sidebar($gray-900, $white);
+  @include sidebar($gray-900, $main-white);
 
   .active {
     background-color: $orange;
@@ -22,7 +20,7 @@
 }
 
 .sidebar-light {
-  @include sidebar($orange, $white);
+  @include sidebar($orange, $main-white);
 
   .active {
     background-color: $gray-400;

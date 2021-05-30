@@ -1,10 +1,11 @@
 body {
-  background-color: $gray-800;
+  background-color: #343233;
+  color: $main-white;
 }
 
 // Anchor
 a {
-  color: $white;
+  color: $main-white;
   text-decoration: none;
 
   &:hover {
@@ -16,17 +17,17 @@ a {
 .btn {
   border: 0;
   padding: 8px 16px;
-  color: $white;
+  color: $main-white;
 
   // Button colors
   &-orange {
     background-color: $orange;
-    color: $white;
+    color: $main-white;
   }
 
   &-gray {
     background-color: $gray-800;
-    color: $white;
+    color: $main-white;
   }
 
   // Button sizes
@@ -46,7 +47,6 @@ a {
   width: 100%;
   border-collapse: collapse;
   background-color: $table-background-color;
-  color: $white;
 
   th {
     @extend %table-constants;
@@ -62,6 +62,7 @@ a {
 .input-wrapper {
   width: 350px;
   margin-top: 10px;
+
   .input {
     width: 100%;
     padding: 8px;
