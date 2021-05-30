@@ -23,6 +23,6 @@
   @include sidebar($orange, $main-white);
 
   .active {
-    background-color: $gray-400;
+    background-color: $navbar-background-color;
   }
 }
