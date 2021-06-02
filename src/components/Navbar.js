@@ -1,6 +1,7 @@
 import {useContext} from 'react';
 import {Link} from 'react-router-dom';
 import {ThemeContext} from '../contexts/ThemeContext';
+import {Btn} from '../GlobalStyles';
 
 const Navbar = () => {
   const {isLightTheme, setIsLightTheme} = useContext(ThemeContext);
@@ -33,8 +34,7 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
-      <button className={`btn ${isLightTheme ? 'btn-gray' : 'btn-orange'}`}
-              onClick={changeTheme}>{isLightTheme ? 'Dark' : 'Light'}</button>
+      <Btn dark={!!isLightTheme} onClick={changeTheme}>{isLightTheme ? 'Dark' : 'Light'}</Btn>
     </nav>
   );
 };
