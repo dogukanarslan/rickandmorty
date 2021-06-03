@@ -2,7 +2,7 @@ import {Switch, Route, Redirect} from 'react-router-dom';
 import Character from '../pages/character/Character';
 import Location from '../pages/location/Location';
 import Episode from '../pages/episode/Episode';
-import Sidebar from './Sidebar';
+import Sidebar from './Sidebar/Sidebar';
 import {useContext} from 'react';
 import {ThemeContext} from '../contexts/ThemeContext';
 
