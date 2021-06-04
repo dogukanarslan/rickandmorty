@@ -1,5 +1,6 @@
 import {useContext} from 'react';
 import {ThemeContext} from '../../contexts/ThemeContext';
+import {StyledButton} from '../../components/Button/Button.styles';
 
 const CharacterList = ({characters, setCharacters}) => {
   const handleClick = (type) => {
@@ -40,14 +41,9 @@ const CharacterList = ({characters, setCharacters}) => {
         </tbody>
       </table>
       <nav className="d-flex justify-content-between mt-2">
-        <button onClick={() => handleClick('prev')}
-                className={`btn ${isLightTheme ? 'btn-gray' : 'btn-orange'}`}>
-          Previous
-        </button>
+        <StyledButton label="Previous" onClick={() => handleClick('prev')} dark={!!isLightTheme}/>
         <span>{characters.info && characters.info.page}</span>
-        <button onClick={() => handleClick('next')} className={`btn ${isLightTheme ? 'btn-gray' : 'btn-orange'}`}>
-          Next
-        </button>
+        <StyledButton label="Next" onClick={() => handleClick('next')} dark={!!isLightTheme}/>
       </nav>
     </div>
   );
