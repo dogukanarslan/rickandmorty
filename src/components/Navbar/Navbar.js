@@ -1,7 +1,7 @@
 import {useContext} from 'react';
 import {Link} from 'react-router-dom';
 import {ThemeContext} from '../../contexts/ThemeContext';
-import {Btn} from '../../GlobalStyles';
+import {StyledButton} from '../Button/Button.styles';
 import {Nav, NavList, NavItem, NavLogo} from './Navbar.styles';
 
 const Navbar = () => {
@@ -35,7 +35,7 @@ const Navbar = () => {
           </Link>
         </NavItem>
       </NavList>
-      <Btn dark={!!isLightTheme} onClick={changeTheme}>{isLightTheme ? 'Dark' : 'Light'}</Btn>
+      <StyledButton label={isLightTheme ? 'Dark' : 'Light'} dark={!!isLightTheme} onClick={changeTheme}/>
     </Nav>
   );
 };
