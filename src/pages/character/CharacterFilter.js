@@ -27,9 +27,7 @@ const CharacterFilter = ({getCharacters}) => {
       <form>
         <div className="row mb-4">
           <div className="col-md-6">
-            <SelectInputWrapper>
-              <StyledSelectInput label="Status" filters={filters} onChange={(e) => handleChange(e, 'status')}/>
-            </SelectInputWrapper>
+            <StyledSelectInput label="Status" filters={filters} onChange={(e) => handleChange(e, 'status')}/>
           </div>
           <div className="col-md-6">
             <label>Gender</label>

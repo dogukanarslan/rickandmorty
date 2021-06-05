@@ -1,7 +1,7 @@
-import {StyledLabel} from './Input.styles';
+import {SelectInputWrapper, StyledLabel} from './Input.styles';
 
 const SelectInput = ({className, label, filters, onChange}) => (
-  <>
+  <SelectInputWrapper>
     <StyledLabel>{label}</StyledLabel>
     <select className={className} onChange={onChange}>
       {
@@ -14,7 +14,7 @@ const SelectInput = ({className, label, filters, onChange}) => (
         })
       }
     </select>
-  </>
+  </SelectInputWrapper>
 );
 
 export default SelectInput;
