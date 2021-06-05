@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import {filters} from '../../constants';
+import {SelectInputWrapper, StyledSelectInput} from '../../components/Input/Input.styles';
 
 const CharacterFilter = ({getCharacters}) => {
   const [queryParams, setQueryParams] = useState({});
@@ -26,21 +27,9 @@ const CharacterFilter = ({getCharacters}) => {
       <form>
         <div className="row mb-4">
           <div className="col-md-6">
-            <label>Status</label>
-            <div className="select-wrapper">
-              <select
-                className="select"
-                onChange={(e) => handleChange(e, 'status')}
-              >
-                {filters.statuses.map((status) => {
-                  return (
-                    <option key={status.value} value={status.value}>
-                      {status.name}
-                    </option>
-                  );
-                })}
-              </select>
-            </div>
+            <SelectInputWrapper>
+              <StyledSelectInput label="Status" filters={filters} onChange={(e) => handleChange(e, 'status')}/>
+            </SelectInputWrapper>
           </div>
           <div className="col-md-6">
             <label>Gender</label>
