@@ -1,6 +1,6 @@
-import {StyledLabel, TextInputWrapper} from './Input.styles';
+import { StyledLabel, TextInputWrapper } from './Input.styles';
 
-const TextInput = ({className, onChange, label, placeholder}) => (
+const TextInput = ({ className, onChange, label, placeholder }) => (
   <TextInputWrapper>
     <StyledLabel>{label}</StyledLabel>
     <input

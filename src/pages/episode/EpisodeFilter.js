@@ -1,14 +1,14 @@
-import {useEffect, useState} from 'react';
-import {StyledTextInput} from '../../components/Input/Input.styles';
+import { useEffect, useState } from 'react';
+import { StyledTextInput } from '../../components/Input/Input.styles';
 
-const EpisodeFilter = ({getEpisodes}) => {
+const EpisodeFilter = ({ getEpisodes }) => {
   const [queryParams, setQueryParams] = useState({});
 
   const handleChange = (e, type) => {
     e.preventDefault();
     let filter = {};
     filter[type] = e.target.value;
-    setQueryParams({...queryParams, ...filter});
+    setQueryParams({ ...queryParams, ...filter });
   };
 
   useEffect(() => {

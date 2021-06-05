@@ -1,11 +1,11 @@
-import {useContext} from 'react';
-import {api} from '../../constants';
+import { useContext } from 'react';
+import { api } from '../../constants';
 import EpisodeList from './EpisodeList';
 import Filter from './EpisodeFilter';
-import {EpisodeContext} from '../../contexts/EpisodeContext';
+import { EpisodeContext } from '../../contexts/EpisodeContext';
 
 const Episode = () => {
-  const {episodes, setEpisodes} = useContext(EpisodeContext);
+  const { episodes, setEpisodes } = useContext(EpisodeContext);
   const getEpisodes = (filter = '') => {
     fetch(`${api}/episode/?${filter}`)
       .then((res) => res.json())
@@ -16,8 +16,8 @@ const Episode = () => {
 
   return (
     <div>
-      <Filter getEpisodes={getEpisodes}/>
-      <EpisodeList episodes={episodes} setEpisodes={setEpisodes}/>
+      <Filter getEpisodes={getEpisodes} />
+      <EpisodeList episodes={episodes} setEpisodes={setEpisodes} />
     </div>
   );
 };

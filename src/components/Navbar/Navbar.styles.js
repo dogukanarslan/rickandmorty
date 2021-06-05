@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import {dark, orange, light} from '../../GlobalStyles';
+import { dark, orange, light } from '../../GlobalStyles';
 
 export const Nav = styled.nav`
-  background-color: ${props => props.dark ? orange : dark};
+  background-color: ${(props) => (props.dark ? orange : dark)};
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -20,6 +20,6 @@ export const NavItem = styled.li`
 
 export const NavLogo = styled(NavItem)`
   & a {
-    color: ${(props) => props.dark ? light : orange};
+    color: ${(props) => (props.dark ? light : orange)};
   }
 `;

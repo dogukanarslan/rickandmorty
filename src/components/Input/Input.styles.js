@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {black} from '../../GlobalStyles';
+import { black } from '../../GlobalStyles';
 import SelectInput from './SelectInput';
 import TextInput from './TextInput';
 
@@ -11,7 +11,7 @@ export const SelectInputWrapper = styled.div`
   &::after {
     font-size: 24px;
     color: ${black};
-    content: "▾";
+    content: '▾';
     position: absolute;
     right: 10px;
     top: 50%;

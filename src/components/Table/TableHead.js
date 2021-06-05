@@ -1,10 +1,10 @@
-const TableHead = ({className, headers}) => (
+const TableHead = ({ className, headers }) => (
   <thead className={className}>
-  <tr>
-    {
-      headers.map(header => <th key={header}>{header}</th>)
-    }
-  </tr>
+    <tr>
+      {headers.map((header) => (
+        <th key={header}>{header}</th>
+      ))}
+    </tr>
   </thead>
 );
 

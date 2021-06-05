@@ -1,4 +1,4 @@
-import {HashRouter as Router} from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import './App.css';
 import 'bootstrap';
 import Home from './components/Home';
@@ -15,8 +15,8 @@ function App() {
         <CharacterContextProvider>
           <EpisodeContextProvider>
             <LocationContextProvider>
-              <Navbar/>
-              <Home/>
+              <Navbar />
+              <Home />
             </LocationContextProvider>
           </EpisodeContextProvider>
         </CharacterContextProvider>

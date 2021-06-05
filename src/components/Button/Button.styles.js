@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {dark, orange} from '../../GlobalStyles';
+import { dark, orange } from '../../GlobalStyles';
 import Button from './Button';
 
 export const StyledButton = styled(Button)`
@@ -7,12 +7,10 @@ export const StyledButton = styled(Button)`
   padding: 8px 16px;
   border-radius: 12px;
   color: #fff;
-  background-color: ${(props) => props.dark
-          ? dark
-          : orange};
+  background-color: ${(props) => (props.dark ? dark : orange)};
   cursor: pointer;
 
   &:hover {
-    opacity: .8;
+    opacity: 0.8;
   }
 `;

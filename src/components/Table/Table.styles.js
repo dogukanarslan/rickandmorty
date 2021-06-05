@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {gray, black} from '../../GlobalStyles';
+import { gray, black } from '../../GlobalStyles';
 import Table from './Table';
 import TableHead from './TableHead';
 import TableBody from './TableBody';
@@ -11,7 +11,8 @@ export const StyledTable = styled(Table)`
   background-color: ${gray};
 
   & {
-    td, th {
+    td,
+    th {
       border: 1px solid ${black};
       padding: 8px 16px;
     }
