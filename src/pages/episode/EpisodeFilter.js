@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react';
+import {StyledTextInput} from '../../components/Input/Input.styles';
 
 const EpisodeFilter = ({getEpisodes}) => {
   const [queryParams, setQueryParams] = useState({});
@@ -25,26 +26,18 @@ const EpisodeFilter = ({getEpisodes}) => {
       <form>
         <div className="row mb-4">
           <div className="col-md-6">
-            <label>Name</label>
-            <div className="input-wrapper">
-              <input
-                className="input"
-                type="text"
-                placeholder="Name"
-                onChange={(e) => handleChange(e, 'name')}
-              />
-            </div>
+            <StyledTextInput
+              label="Name"
+              placeholder="Name"
+              onChange={(e) => handleChange(e, 'name')}
+            />
           </div>
           <div className="col-md-6">
-            <label>Episode</label>
-            <div className="input-wrapper">
-              <input
-                className="input"
-                type="text"
-                placeholder="Episode"
-                onChange={(e) => handleChange(e, 'episode')}
-              />
-            </div>
+            <StyledTextInput
+              label="Episode"
+              placeholder="Episode"
+              onChange={(e) => handleChange(e, 'episode')}
+            />
           </div>
         </div>
       </form>

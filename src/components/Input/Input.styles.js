@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import {black} from '../../GlobalStyles';
 import SelectInput from './SelectInput';
+import TextInput from './TextInput';
 
 export const SelectInputWrapper = styled.div`
   position: relative;
@@ -17,6 +18,10 @@ export const SelectInputWrapper = styled.div`
   }
 `;
 
+export const TextInputWrapper = styled.div`
+  width: 350px;
+`;
+
 export const StyledSelectInput = styled(SelectInput)`
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -28,4 +33,9 @@ export const StyledSelectInput = styled(SelectInput)`
 export const StyledLabel = styled.label`
   display: block;
   margin-bottom: 10px;
+`;
+
+export const StyledTextInput = styled(TextInput)`
+  width: 100%;
+  padding: 8px;
 `;
