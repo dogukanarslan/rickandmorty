@@ -9,8 +9,8 @@ const Character = () => {
   const getCharacters = (filter = '') => {
     fetch(`${api}/character/?${filter}`)
       .then((res) => res.json())
-      .then((res) => {
-        setCharacters(res);
+      .then((data) => {
+        setCharacters(data);
       });
   };
 

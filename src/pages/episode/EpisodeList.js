@@ -1,5 +1,8 @@
 import {useContext} from 'react';
 import {ThemeContext} from '../../contexts/ThemeContext';
+import {StyledTable} from '../../components/Table/Table.styles';
+import {StyledButton} from '../../components/Button/Button.styles';
+import EpisodeTableRow from '../../components/Table/TableRows/EpisodeTableRow';
 
 const EpisodeList = ({episodes, setEpisodes}) => {
   const handleClick = (type) => {
@@ -12,38 +15,17 @@ const EpisodeList = ({episodes, setEpisodes}) => {
 
   const {isLightTheme} = useContext(ThemeContext);
 
+  const headers = ['Name', 'Air Date', 'Episode'];
+
   return (
     <div>
-      <table className="table">
-        <thead>
-        <tr>
-          <th>Name</th>
-          <th>Air Date</th>
-          <th>Episode</th>
-        </tr>
-        </thead>
-        <tbody>
-        {episodes.results &&
-        episodes.results.map((episode) => {
-          return (
-            <tr key={episode.id}>
-              <td>{episode.name}</td>
-              <td>{episode.air_date}</td>
-              <td>{episode.episode}</td>
-            </tr>
-          );
-        })}
-        </tbody>
-      </table>
+      <StyledTable
+        tableRow={<EpisodeTableRow episodes={episodes.results}/>}
+        headers={headers}/>
       <nav className="d-flex justify-content-between mt-2">
-        <button onClick={() => handleClick('prev')}
-                className={`btn ${isLightTheme ? 'btn-gray' : 'btn-orange'}`}>
-          Previous
-        </button>
+        <StyledButton label="Previous" onClick={() => handleClick('prev')} dark={!!isLightTheme}/>
         <span>{episodes.info && episodes.info.page}</span>
-        <button onClick={() => handleClick('next')} className={`btn ${isLightTheme ? 'btn-gray' : 'btn-orange'}`}>
-          Next
-        </button>
+        <StyledButton label="Next" onClick={() => handleClick('next')} dark={!!isLightTheme}/>
       </nav>
     </div>
   );
