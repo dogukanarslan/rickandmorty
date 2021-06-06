@@ -7,6 +7,10 @@ import { Col, Container, Row } from '../../GlobalStyles';
 
 const EpisodeList = ({ episodes, setEpisodes }) => {
   const handleClick = (type) => {
+    if (!episodes.info[type]) {
+      return;
+    }
+
     fetch(episodes.info[type])
       .then((response) => response.json())
       .then((data) => {

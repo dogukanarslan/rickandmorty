@@ -7,6 +7,10 @@ import { Col, Container, Row } from '../../GlobalStyles';
 
 const CharacterList = ({ characters, setCharacters }) => {
   const handleClick = (type) => {
+    if (!characters.info[type]) {
+      return;
+    }
+
     fetch(characters.info[type])
       .then((response) => response.json())
       .then((data) => {

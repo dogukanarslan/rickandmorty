@@ -7,6 +7,10 @@ import { Col, Container, Row } from '../../GlobalStyles';
 
 const LocationList = ({ locations, setLocations }) => {
   const handleClick = (type) => {
+    if (!locations.info[type]) {
+      return;
+    }
+
     fetch(locations.info[type])
       .then((response) => response.json())
       .then((data) => {
