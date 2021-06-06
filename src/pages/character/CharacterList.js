@@ -3,6 +3,7 @@ import { ThemeContext } from '../../contexts/ThemeContext';
 import { StyledButton } from '../../components/Button/Button.styles';
 import { StyledTable } from '../../components/Table/Table.styles';
 import CharacterTableRow from '../../components/Table/TableRows/CharacterTableRow';
+import { Col, Container, Row } from '../../GlobalStyles';
 
 const CharacterList = ({ characters, setCharacters }) => {
   const handleClick = (type) => {
@@ -18,25 +19,35 @@ const CharacterList = ({ characters, setCharacters }) => {
   const headers = ['Name', 'Status', 'Species', 'Type', 'Gender'];
 
   return (
-    <div>
-      <StyledTable
-        tableRow={<CharacterTableRow characters={characters.results} />}
-        headers={headers}
-      />
-      <nav className="d-flex justify-content-between mt-2">
-        <StyledButton
-          label="Previous"
-          onClick={() => handleClick('prev')}
-          dark={!!isLightTheme}
-        />
-        <span>{characters.info && characters.info.page}</span>
-        <StyledButton
-          label="Next"
-          onClick={() => handleClick('next')}
-          dark={!!isLightTheme}
-        />
-      </nav>
-    </div>
+    <Container>
+      <Row>
+        <Col size={1}>
+          <StyledTable
+            tableRow={<CharacterTableRow characters={characters.results} />}
+            headers={headers}
+          />
+        </Col>
+      </Row>
+      <Row justifyContent="space-between" style={{ marginTop: '10px' }}>
+        <Col size={1} textAlign="left">
+          <StyledButton
+            label="Previous"
+            onClick={() => handleClick('prev')}
+            dark={!!isLightTheme}
+          />
+        </Col>
+        <Col size={1} textAlign="center">
+          <span>{characters.info && characters.info.page}</span>
+        </Col>
+        <Col size={1} textAlign="right">
+          <StyledButton
+            label="Next"
+            onClick={() => handleClick('next')}
+            dark={!!isLightTheme}
+          />
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

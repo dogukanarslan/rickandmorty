@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 // Colors
 export const dark = '#222';
@@ -25,4 +25,21 @@ export const GlobalStyle = createGlobalStyle`
       text-decoration: underline;
     }
   }
+`;
+
+export const Container = styled.div`
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-top: 10px;
+`;
+
+export const Row = styled.div`
+  display: flex;
+  justify-content: ${({ justifyContent }) => justifyContent};
+`;
+
+export const Col = styled.div`
+  padding: 0 15px;
+  flex: ${({ size }) => size};
+  text-align: ${({ textAlign }) => textAlign};
 `;

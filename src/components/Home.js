@@ -3,22 +3,16 @@ import Character from '../pages/character/Character';
 import Location from '../pages/location/Location';
 import Episode from '../pages/episode/Episode';
 import Sidebar from './Sidebar/Sidebar';
-import { useContext } from 'react';
-import { ThemeContext } from '../contexts/ThemeContext';
+import { Col, Container, Row } from '../GlobalStyles';
 
 const Home = () => {
-  const { isLightTheme } = useContext(ThemeContext);
   return (
-    <div
-      className={`container-fluid pt-4 ${
-        isLightTheme ? 'text-dark' : 'bg-dark text-light'
-      }`}
-    >
-      <div className="row">
-        <div className="col-md-2">
+    <Container>
+      <Row>
+        <Col size={2}>
           <Sidebar />
-        </div>
-        <div className="col-md-10">
+        </Col>
+        <Col size={10}>
           <Switch>
             <Route path="/characters">
               <Character />
@@ -33,9 +27,9 @@ const Home = () => {
               <Redirect to="/characters" />
             </Route>
           </Switch>
-        </div>
-      </div>
-    </div>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

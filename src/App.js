@@ -1,6 +1,5 @@
 import { HashRouter as Router } from 'react-router-dom';
-import './App.css';
-import 'bootstrap';
+import './App.scss';
 import Home from './components/Home';
 import Navbar from './components/Navbar/Navbar';
 import ThemeContextProvider from './contexts/ThemeContext';

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { filters } from '../../constants';
 import { StyledSelectInput } from '../../components/Input/Input.styles';
+import { Col, Container, Row } from '../../GlobalStyles';
 
 const CharacterFilter = ({ getCharacters }) => {
   const [queryParams, setQueryParams] = useState({});
@@ -23,26 +24,26 @@ const CharacterFilter = ({ getCharacters }) => {
   }, [queryParams]);
 
   return (
-    <div className="sidebar">
+    <Container>
       <form>
-        <div className="row mb-4">
-          <div className="col-md-6">
+        <Row>
+          <Col size={1}>
             <StyledSelectInput
               label="Status"
               options={filters.statuses}
               onChange={(e) => handleChange(e, 'status')}
             />
-          </div>
-          <div className="col-md-6">
+          </Col>
+          <Col size={1}>
             <StyledSelectInput
               label="Gender"
               options={filters.genders}
               onChange={(e) => handleChange(e, 'gender')}
             />
-          </div>
-        </div>
+          </Col>
+        </Row>
       </form>
-    </div>
+    </Container>
   );
 };
 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { StyledTextInput } from '../../components/Input/Input.styles';
+import { Col, Container, Row } from '../../GlobalStyles';
 
 const LocationFilter = ({ getLocations }) => {
   const [queryParams, setQueryParams] = useState({});
@@ -22,26 +23,26 @@ const LocationFilter = ({ getLocations }) => {
   }, [queryParams]);
 
   return (
-    <div className="sidebar">
+    <Container>
       <form>
-        <div className="row mb-4">
-          <div className="col-md-6">
+        <Row>
+          <Col size={1}>
             <StyledTextInput
               label="Name"
               placeholder="Name"
               onChange={(e) => handleChange(e, 'name')}
             />
-          </div>
-          <div className="col-md-6">
+          </Col>
+          <Col size={1}>
             <StyledTextInput
               label="Dimension"
               placeholder="Dimension"
               onChange={(e) => handleChange(e, 'dimension')}
             />
-          </div>
-        </div>
+          </Col>
+        </Row>
       </form>
-    </div>
+    </Container>
   );
 };
 
