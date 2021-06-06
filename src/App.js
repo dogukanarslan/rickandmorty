@@ -7,6 +7,7 @@ import ThemeContextProvider from './contexts/ThemeContext';
 import CharacterContextProvider from './contexts/CharacterContext';
 import EpisodeContextProvider from './contexts/EpisodeContext';
 import LocationContextProvider from './contexts/LocationContext';
+import { GlobalStyle } from './GlobalStyles';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <CharacterContextProvider>
           <EpisodeContextProvider>
             <LocationContextProvider>
+              <GlobalStyle />
               <Navbar />
               <Home />
             </LocationContextProvider>
