@@ -4,4 +4,9 @@ const Button = ({ className, label, onClick }) => (
   </button>
 );
 
+Button.defaultProps = {
+  dark: true,
+  label: 'Button',
+};
+
 export default Button;
