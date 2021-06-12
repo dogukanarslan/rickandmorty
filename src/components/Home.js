@@ -3,6 +3,7 @@ import Character from '../pages/character/Character';
 import Location from '../pages/location/Location';
 import Episode from '../pages/episode/Episode';
 import Sidebar from './Sidebar/Sidebar';
+import CharacterDetail from '../pages/character/CharacterDetail';
 import { Col, Container, Row } from '../GlobalStyles';
 
 const Home = () => {
@@ -14,6 +15,10 @@ const Home = () => {
         </Col>
         <Col size={10}>
           <Switch>
+            <Route
+              path="/characters/:id"
+              render={(routeProps) => <CharacterDetail {...routeProps} />}
+            />
             <Route path="/characters">
               <Character />
             </Route>

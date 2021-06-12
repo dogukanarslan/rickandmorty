@@ -1,6 +1,10 @@
-const CharacterTableRow = ({ className, characters = [] }) =>
+const CharacterTableRow = ({ className, characters = [], onRowClick }) =>
   characters.map((row) => (
-    <tr className={className} key={row.id}>
+    <tr
+      onClick={() => onRowClick(`/characters/${row.id}`)}
+      className={className}
+      key={row.id}
+    >
       <td>{row.name}</td>
       <td>{row.status}</td>
       <td>{row.species}</td>

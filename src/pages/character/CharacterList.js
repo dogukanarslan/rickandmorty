@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { StyledButton } from '../../components/Button/Button.styles';
 import { StyledTable } from '../../components/Table/Table.styles';
@@ -6,6 +7,8 @@ import CharacterTableRow from '../../components/Table/TableRows/CharacterTableRo
 import { Col, Container, Row } from '../../GlobalStyles';
 
 const CharacterList = ({ characters, setCharacters }) => {
+  const history = useHistory();
+
   const handleClick = (type) => {
     if (!characters.info[type]) {
       return;
@@ -18,6 +21,10 @@ const CharacterList = ({ characters, setCharacters }) => {
       });
   };
 
+  const onRowClick = (path) => {
+    history.push(path);
+  };
+
   const { isLightTheme } = useContext(ThemeContext);
 
   const headers = ['Name', 'Status', 'Species', 'Type', 'Gender'];
@@ -27,7 +34,12 @@ const CharacterList = ({ characters, setCharacters }) => {
       <Row>
         <Col size={1}>
           <StyledTable
-            tableRow={<CharacterTableRow characters={characters.results} />}
+            tableRow={
+              <CharacterTableRow
+                onRowClick={onRowClick}
+                characters={characters.results}
+              />
+            }
             headers={headers}
           />
         </Col>
