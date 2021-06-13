@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { StyledTable } from '../../components/Table/Table.styles';
 import { StyledButton } from '../../components/Button/Button.styles';
@@ -6,6 +7,8 @@ import LocationTableRow from '../../components/Table/TableRows/LocationTableRow'
 import { Col, Container, Row } from '../../GlobalStyles';
 
 const LocationList = ({ locations, setLocations }) => {
+  const history = useHistory();
+
   const handleClick = (type) => {
     if (!locations.info[type]) {
       return;
@@ -18,6 +21,10 @@ const LocationList = ({ locations, setLocations }) => {
       });
   };
 
+  const onRowClick = (path) => {
+    history.push(path);
+  };
+
   const { isLightTheme } = useContext(ThemeContext);
 
   const headers = ['Name', 'Type', 'Dimension'];
@@ -27,7 +34,12 @@ const LocationList = ({ locations, setLocations }) => {
       <Row>
         <Col size={1}>
           <StyledTable
-            tableRow={<LocationTableRow locations={locations.results} />}
+            tableRow={
+              <LocationTableRow
+                onRowClick={onRowClick}
+                locations={locations.results}
+              />
+            }
             headers={headers}
           />
         </Col>
