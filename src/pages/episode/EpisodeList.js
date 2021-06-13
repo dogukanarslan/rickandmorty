@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { StyledTable } from '../../components/Table/Table.styles';
 import { StyledButton } from '../../components/Button/Button.styles';
@@ -6,6 +7,8 @@ import EpisodeTableRow from '../../components/Table/TableRows/EpisodeTableRow';
 import { Col, Container, Row } from '../../GlobalStyles';
 
 const EpisodeList = ({ episodes, setEpisodes }) => {
+  const history = useHistory();
+
   const handleClick = (type) => {
     if (!episodes.info[type]) {
       return;
@@ -18,6 +21,10 @@ const EpisodeList = ({ episodes, setEpisodes }) => {
       });
   };
 
+  const onRowClick = (path) => {
+    history.push(path);
+  };
+
   const { isLightTheme } = useContext(ThemeContext);
 
   const headers = ['Name', 'Air Date', 'Episode'];
@@ -27,7 +34,12 @@ const EpisodeList = ({ episodes, setEpisodes }) => {
       <Row>
         <Col size={1}>
           <StyledTable
-            tableRow={<EpisodeTableRow episodes={episodes.results} />}
+            tableRow={
+              <EpisodeTableRow
+                onRowClick={onRowClick}
+                episodes={episodes.results}
+              />
+            }
             headers={headers}
           />
         </Col>

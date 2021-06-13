@@ -4,6 +4,7 @@ import Location from '../pages/location/Location';
 import Episode from '../pages/episode/Episode';
 import Sidebar from './Sidebar/Sidebar';
 import CharacterDetail from '../pages/character/CharacterDetail';
+import EpisodeDetail from '../pages/episode/EpisodeDetail';
 import { Col, Container, Row } from '../GlobalStyles';
 
 const Home = () => {
@@ -25,6 +26,10 @@ const Home = () => {
             <Route path="/locations">
               <Location />
             </Route>
+            <Route
+              path="/episodes/:id"
+              render={(routeProps) => <EpisodeDetail {...routeProps} />}
+            />
             <Route path="/episodes">
               <Episode />
             </Route>
