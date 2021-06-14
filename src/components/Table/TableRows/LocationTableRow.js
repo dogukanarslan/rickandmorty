@@ -1,6 +1,8 @@
+import { StyledTableRow } from '../Table.styles';
+
 const LocationTableRow = ({ className, locations = [], onRowClick }) =>
   locations.map((row) => (
-    <tr
+    <StyledTableRow
       className={className}
       key={row.id}
       onClick={() => onRowClick(`/locations/${row.id}`)}
@@ -8,7 +10,7 @@ const LocationTableRow = ({ className, locations = [], onRowClick }) =>
       <td>{row.name}</td>
       <td>{row.type}</td>
       <td>{row.dimension}</td>
-    </tr>
+    </StyledTableRow>
   ));
 
 export default LocationTableRow;

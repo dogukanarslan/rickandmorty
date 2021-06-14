@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { gray, black } from '../../GlobalStyles';
+import { gray, black, orange } from '../../GlobalStyles';
 import Table from './Table';
 import TableHead from './TableHead';
 import TableBody from './TableBody';
@@ -28,4 +28,14 @@ export const StyledTableHead = styled(TableHead)`
 export const StyledTableBody = styled(TableBody)`
   border: 1px solid ${black};
   padding: 8px 16px;
+`;
+
+export const StyledTableRow = styled.tr`
+  &:hover {
+    font-weight: bold;
+    color: ${black};
+    background-color: ${orange};
+    transition: background-color 0.5s;
+    cursor: pointer;
+  }
 `;

@@ -1,6 +1,8 @@
+import { StyledTableRow } from '../Table.styles';
+
 const EpisodeTableRow = ({ className, episodes = [], onRowClick }) =>
   episodes.map((row) => (
-    <tr
+    <StyledTableRow
       className={className}
       key={row.id}
       onClick={() => onRowClick(`/episodes/${row.id}`)}
@@ -8,7 +10,7 @@ const EpisodeTableRow = ({ className, episodes = [], onRowClick }) =>
       <td>{row.name}</td>
       <td>{row.air_date}</td>
       <td>{row.episode}</td>
-    </tr>
+    </StyledTableRow>
   ));
 
 export default EpisodeTableRow;
