@@ -3,8 +3,8 @@ import { useHistory } from 'react-router-dom';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { StyledTable } from '../../components/Table/Table.styles';
 import { StyledButton } from '../../components/Button/Button.styles';
+import { Col, Container, Row, ScrollableContainer } from '../../GlobalStyles';
 import EpisodeTableRow from '../../components/Table/TableRows/EpisodeTableRow';
-import { Col, Container, Row } from '../../GlobalStyles';
 
 const EpisodeList = ({ episodes, setEpisodes }) => {
   const history = useHistory();
@@ -33,15 +33,17 @@ const EpisodeList = ({ episodes, setEpisodes }) => {
     <Container>
       <Row>
         <Col size={1}>
-          <StyledTable
-            tableRow={
-              <EpisodeTableRow
-                onRowClick={onRowClick}
-                episodes={episodes.results}
-              />
-            }
-            headers={headers}
-          />
+          <ScrollableContainer>
+            <StyledTable
+              tableRow={
+                <EpisodeTableRow
+                  onRowClick={onRowClick}
+                  episodes={episodes.results}
+                />
+              }
+              headers={headers}
+            />
+          </ScrollableContainer>
         </Col>
       </Row>
       <Row justifyContent="space-between" style={{ marginTop: '10px' }}>

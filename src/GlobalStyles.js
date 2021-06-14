@@ -33,6 +33,11 @@ export const Container = styled.div`
   margin-top: 10px;
 `;
 
+export const ScrollableContainer = styled.div`
+  overflow: auto;
+  height: 450px;
+`;
+
 export const Row = styled.div`
   display: flex;
   justify-content: ${({ justifyContent }) => justifyContent};
