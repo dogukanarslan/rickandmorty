@@ -18,5 +18,4 @@ SelectInput.args = {
 
 export default {
   title: 'components/SelectInput',
-  component: StyledSelectInput,
 };

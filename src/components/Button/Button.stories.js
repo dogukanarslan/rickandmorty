@@ -14,5 +14,4 @@ LightButton.args = {
 
 export default {
   title: 'components/Button',
-  component: StyledButton,
 };

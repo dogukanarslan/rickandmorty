@@ -8,5 +8,4 @@ TextInput.args = {
 
 export default {
   title: 'components/TextInput',
-  component: StyledTextInput,
 };
