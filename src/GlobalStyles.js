@@ -39,10 +39,6 @@ export const GlobalStyle = createGlobalStyle`
     background: ${orange};
     border-radius: 10px;
   }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #b30000;
-  }
 `;
 
 export const Container = styled.div`
