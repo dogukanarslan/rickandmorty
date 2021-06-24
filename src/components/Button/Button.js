@@ -5,7 +5,6 @@ const Button = ({ className, label, onClick, ...props }) => (
 );
 
 Button.defaultProps = {
-  dark: true,
   label: 'Button',
 };
 

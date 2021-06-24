@@ -1,6 +1,4 @@
-import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import { ThemeContext } from '../../contexts/ThemeContext';
 import { StyledButton } from '../../components/Button/Button.styles';
 import { StyledTable } from '../../components/Table/Table.styles';
 import { Col, Container, Row, ScrollableContainer } from '../../GlobalStyles';
@@ -25,8 +23,6 @@ const CharacterList = ({ characters, setCharacters }) => {
     history.push(path);
   };
 
-  const { isLightTheme } = useContext(ThemeContext);
-
   const headers = ['Name', 'Status', 'Species', 'Type', 'Gender'];
 
   return (
@@ -48,21 +44,13 @@ const CharacterList = ({ characters, setCharacters }) => {
       </Row>
       <Row justifyContent="space-between" style={{ marginTop: '10px' }}>
         <Col size={1} textAlign="left">
-          <StyledButton
-            label="Previous"
-            onClick={() => handleClick('prev')}
-            dark={!!isLightTheme}
-          />
+          <StyledButton label="Previous" onClick={() => handleClick('prev')} />
         </Col>
         <Col size={1} textAlign="center">
           <span>{characters.info && characters.info.page}</span>
         </Col>
         <Col size={1} textAlign="right">
-          <StyledButton
-            label="Next"
-            onClick={() => handleClick('next')}
-            dark={!!isLightTheme}
-          />
+          <StyledButton label="Next" onClick={() => handleClick('next')} />
         </Col>
       </Row>
     </Container>
