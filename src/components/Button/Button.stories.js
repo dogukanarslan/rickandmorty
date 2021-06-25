@@ -1,15 +1,16 @@
 import { StyledButton } from './Button.styles';
+import { darkTheme, lightTheme } from '../Themes';
 
 export const DarkButton = (args) => <StyledButton {...args} />;
 DarkButton.args = {
   label: 'Dark Button',
-  dark: true,
+  theme: darkTheme,
 };
 
 export const LightButton = (args) => <StyledButton {...args} />;
 LightButton.args = {
   label: 'Light Button',
-  dark: false,
+  theme: lightTheme,
 };
 
 export default {
