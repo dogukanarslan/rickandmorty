@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { StyledButton } from '../Button/Button.styles';
 import { Nav, NavList, NavItem, NavLogo } from './Navbar.styles';
