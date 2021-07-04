@@ -5,6 +5,7 @@ export const Nav = styled.nav`
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const NavList = styled.ul`
