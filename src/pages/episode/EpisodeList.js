@@ -3,6 +3,7 @@ import { StyledTable } from '../../components/Table/Table.styles';
 import { StyledButton } from '../../components/Button/Button.styles';
 import { Col, Container, Row, ScrollableContainer } from '../../GlobalStyles';
 import EpisodeTableRow from '../../components/Table/TableRows/EpisodeTableRow';
+import { StyledPagination } from '../../components/Pagination/Pagination.styles';
 
 const EpisodeList = ({ episodes, setEpisodes }) => {
   const history = useHistory();
@@ -47,7 +48,7 @@ const EpisodeList = ({ episodes, setEpisodes }) => {
           <StyledButton label="Previous" onClick={() => handleClick('prev')} />
         </Col>
         <Col size={1} textAlign="center">
-          <span>{episodes.info && episodes.info.page}</span>
+          <StyledPagination data={episodes.results} info={episodes.info} />
         </Col>
         <Col size={1} textAlign="right">
           <StyledButton label="Next" onClick={() => handleClick('next')} />

@@ -3,6 +3,7 @@ import { StyledButton } from '../../components/Button/Button.styles';
 import { StyledTable } from '../../components/Table/Table.styles';
 import { Col, Container, Row, ScrollableContainer } from '../../GlobalStyles';
 import CharacterTableRow from '../../components/Table/TableRows/CharacterTableRow';
+import { StyledPagination } from '../../components/Pagination/Pagination.styles';
 
 const CharacterList = ({ characters, setCharacters }) => {
   const history = useHistory();
@@ -47,7 +48,7 @@ const CharacterList = ({ characters, setCharacters }) => {
           <StyledButton label="Previous" onClick={() => handleClick('prev')} />
         </Col>
         <Col size={1} textAlign="center">
-          <span>{characters.info && characters.info.page}</span>
+          <StyledPagination data={characters.results} info={characters.info} />
         </Col>
         <Col size={1} textAlign="right">
           <StyledButton label="Next" onClick={() => handleClick('next')} />

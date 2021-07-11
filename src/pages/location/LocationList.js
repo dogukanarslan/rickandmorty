@@ -3,6 +3,7 @@ import { StyledTable } from '../../components/Table/Table.styles';
 import { StyledButton } from '../../components/Button/Button.styles';
 import { Col, Container, Row, ScrollableContainer } from '../../GlobalStyles';
 import LocationTableRow from '../../components/Table/TableRows/LocationTableRow';
+import { StyledPagination } from '../../components/Pagination/Pagination.styles';
 
 const LocationList = ({ locations, setLocations }) => {
   const history = useHistory();
@@ -47,7 +48,7 @@ const LocationList = ({ locations, setLocations }) => {
           <StyledButton label="Previous" onClick={() => handleClick('prev')} />
         </Col>
         <Col size={1} textAlign="center">
-          <span>{locations.info && locations.info.page}</span>
+          <StyledPagination data={locations.results} info={locations.info} />
         </Col>
         <Col size={1} textAlign="right">
           <StyledButton label="Next" onClick={() => handleClick('next')} />
